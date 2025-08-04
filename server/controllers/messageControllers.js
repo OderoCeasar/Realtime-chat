@@ -3,7 +3,7 @@ const user = require('../models/userModel');
 const Chat = require('../models/chatModel');
 
 
-export const sendMessage = async (req, res) => {
+const sendMessage = async (req, res) => {
     const { chatId, message } = req.body;
     try {
         let msg = await Message.create({ sender: req.rootUserId, message, chatId });
@@ -30,7 +30,7 @@ export const sendMessage = async (req, res) => {
 };
 
 
-export const getMessages = async (req, res) => {
+const getMessages = async (req, res) => {
     const { chatId } = req.params;
     try {
         let messages = await Message.find({ chatId })
@@ -50,3 +50,5 @@ export const getMessages = async (req, res) => {
         console.log(error);
     }
 };
+
+module.exports = { sendMessage, getMessages };
