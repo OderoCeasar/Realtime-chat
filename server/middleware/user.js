@@ -30,5 +30,6 @@ export const Auth = async (req, res, next) => {
         next();
     } catch (error) {
         res.json({ error: "Invalid Token" });
+        console.log(error);
     }
 };
