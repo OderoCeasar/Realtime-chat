@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const request = require('supertest');
 const { MongoMemoryServer } = require('mongodb-memory-server');
-const app = require('../realtime-chat');
+const app = require('../index');
 const User = require('../models/userModel');
 
 
